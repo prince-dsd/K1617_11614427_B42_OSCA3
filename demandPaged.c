@@ -48,6 +48,12 @@ void userInput(){
 	service_page_fault_empty_ns = (service_page_fault_empty*1000000);
 	service_page_fault_modified_ns = (service_page_fault_modified*1000000);
 	times_page_modified_per = (times_page_modified/100);   
+	
+	printf("\nPage Fault rate calculated For:\n");
+	printf("Service Page Fault[Empty|Page Not Modified]=%lf \n",service_page_fault_empty_ns);
+	printf("Service Page Fault [Modified Page][in nanoseconds] %lf \n",service_page_fault_modified_ns);
+	printf("Memory Access Time[in nanoseconds]%lf\n",mem_access_time);
+	printf("Effective Access Time %lf\n",effective_access_time);
     pageFaultRate =  page_fault_rate(service_page_fault_empty_ns,service_page_fault_modified_ns,mem_access_time,times_page_modified_per,effective_access_time);
 	printf("Page Fault rate = %e",pageFaultRate);
 
